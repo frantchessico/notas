@@ -31,6 +31,8 @@ router.post('/notes/add', async (req, res) => {
     else { 
         const NewNote  = new Note({ title, description });
      await NewNote.save();
+     req.flash('success_msg', 'A sua nota foi salva com sucesso.');
+     req.flash('error_msg', 'Algo deu errado.')
         res.redirect('/notes');
     }
 });
@@ -38,8 +40,28 @@ router.post('/notes/add', async (req, res) => {
 router.get('/notes', async (req, res) => {
     const notes = await Note.find().sort({date: 'desc'})
     res.render('notes/notes', { notes })
-    console.log(datas)
+
 });
+
+router.get('/notes/edit/:id', async (req, res) => {
+const note = await Note.findById(req.params.id);
+    res.render('notes/edit-note', {note}) 
+});  
+
+router.put('/notes/update/:id', async (req, res) => {
+const { title, description } = req.body;
+await Note.findByIdAndUpdate(req.params.id, { title, description});
+req.flash('success_msg', 'A sua nota foi atualizada com sucesso.');
+req.flash('error_msg', 'Algo deu errado.')
+res.redirect('/notes')
+});
+
+router.delete('/notes/delete/:id', async (req, res) => {
+   await Note.findByIdAndDelete(req.params.id);
+   req.flash('success_msg', 'A sua nota foi deletada com sucesso')
+
+   res.redirect('/notes');
+})
 
 
 module.exports = router;
