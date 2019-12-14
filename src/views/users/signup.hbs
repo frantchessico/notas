@@ -1,1 +1,45 @@
-<h1>Sign Up</h1>
+<div class="row justify-content-center my-5">
+    <div class="col-md-5">
+        
+<form class="text-center border border-light p-5" action="/users/signup" method="POST">
+
+    <p class="h4 mb-4">Sign up</p>
+
+    <div class="form-row mb-4">
+        <div class="col">
+           
+            <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Primeiro nome">
+        </div>
+        <div class="col">
+           
+            <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Apelido">
+        </div>
+    </div>
+
+    
+    <input type="email" name="email" id="email" class="form-control mb-4" placeholder="Email">
+
+   
+    <input type="password" name="password" id="password" class="form-control my-2" placeholder="Senha" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+    <input type="password" name="password_confirm" id="password" class="form-control" placeholder="Confirmar senha" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        At least 8 characters and 1 digit
+    </small>
+
+    
+    <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+    
+
+    
+    
+
+    
+    <button class="btn btn-indigo my-4 btn-block" type="submit">Sign in</button>
+
+    
+    
+
+</form>
+
+    </div>
+</div>

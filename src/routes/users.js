@@ -9,6 +9,10 @@ router.get('/users/signup', (req, res) => {
     res.render('users/signup')
 });
 
+router.post('/users/signup', (req, res) => {
+    console.log(req.body);
+    res.send('ok')
+})
 
 module.exports = router;
 
