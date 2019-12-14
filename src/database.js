@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/notes', {
+mongoose.connect('mongodb+srv://savanapoint:Luisa@jaime1996@cluster0-jrhmu.mongodb.net/test?retryWrites=true&w=majority/node-login-app', {
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify:false,
